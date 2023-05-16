@@ -12,11 +12,12 @@
     "noImplicitAny":false,
     "typeRoots": ["./node_modules/@types","./types/**"],
     "paths": {
-      "/@/*": ["./src/*"],
-      "@/*": ["./src/*"]
+      "/@/*": ["./core/*"],
+      "@/*": ["./core/*"]
     }
   },
   "include": [
+    "core",
     "src"
   ],
   "exclude": [

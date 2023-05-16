@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="waterfall-scroll" ref="scrollEl">
-      <slot name="waterfall-scroll__head"></slot>
+      <slot name="head"></slot>
       <div
         class="waterfall-scroll__content"
         :style="
@@ -57,16 +57,13 @@
 
 <script lang="ts">
 export default {
-  name: "waterfall3",
+  name: "waterFall3",
 };
 </script> 
 <script lang="ts" setup>
 interface Item {
   _height?: number;
 }
-
-import { useRouter } from "vue-router";
-const router = useRouter();
 
 import {
   ref,
@@ -97,7 +94,7 @@ const props = defineProps({
     type: Number,
     default: 240,
   },
-  // 滚动条与底部距离小于 offset 时触发新的加载
+  // 滚动条与底部距离小于 bottomOffset 时触发新的加载
   bottomOffset: {
     type: Number,
     default: 50,
@@ -139,15 +136,15 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  offsetBottom:{
+  finishGap:{
     type: Number,
     default: 20,
   }
 });
 const emit = defineEmits([
-  "imgError",
   "onBottom",
   "click",
+  "imgError",
   "pullDownMove",
   "pullDownEnd",
 ]);
@@ -302,7 +299,7 @@ const onFinish = () => {
 const setFinishTipPos = () => {
   let maxHeight = Math.max.apply(null, colsHeightArr.value);
   nextTick(() => {
-    (finishEl.value as HTMLElement).style.top = maxHeight + props.offsetBottom+ "px";
+    (finishEl.value as HTMLElement).style.top = maxHeight + props.finishGap+ "px";
   });
 };
 

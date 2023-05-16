@@ -1,32 +1,38 @@
 <script setup lang="ts">
+import  waterFall3  from "../core";
 import axios from "axios";
 import { ref, onMounted } from "vue";
+
 let lists = ref([]);
 let waterfall = ref<HTMLElement | null>();
-
+let page =ref<number>(0)
 const getLists = () => {
   axios
-    .get("./src/mock/list.json" )
+    .get("../mock/lists.json" )
     .then((res) => {
-      if (lists.value.length>100) {
+      // 加载到底部数据了
+      if (page.value.length>10) {
        waterfall.value.onFinish();
         waterfall;
         return;
       }
       lists.value = lists.value.concat(res.data);
+      page.value++
     });
 };
+
 getLists();
 const clickFn = ({ item,index,  isTapImg }) => {
   console.log(item,index,  isTapImg)
 };
+
 const imgErrorFn = (imgItem) => {
   console.log("图片加载错误", imgItem);
 };
 </script>
 
 <template>
-  <waterfall3
+  <water-fall3
     ref="waterfall"
     :lists="lists"
     @onBottom="getLists"
@@ -39,7 +45,7 @@ const imgErrorFn = (imgItem) => {
         <p class="some-info">{{ props.value.info }}</p>
       </div>
     </template> -->
-  </waterfall3>
+  </water-fall3>
 </template>
 
 

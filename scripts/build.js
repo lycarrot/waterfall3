@@ -10,7 +10,7 @@ const pkg = JSON.parse(readFileSync("./package.json", "utf8"));
 
 export default [
   {
-    input: "./src/index.ts",
+    input: "./core/index.ts",
     output: [
       {
         file: pkg.main,

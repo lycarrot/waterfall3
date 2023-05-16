@@ -1,4 +1,4 @@
-import waterFall from "./waterfall.vue";
+import waterFall from "./waterFall.vue";
 import type { App, Component } from "vue";
 
 type EventShim = {
