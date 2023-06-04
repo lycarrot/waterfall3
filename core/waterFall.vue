@@ -215,7 +215,6 @@ const onPreload = () => {
           : isMobile
           ? newItemWidth.value
           : props.itemWidth;
-      console.log("width", item._height, oImg.width, oImg.height, index);
       if (loadedCount.value == props.lists.length) {
         preloaded();
       }
@@ -258,7 +257,6 @@ const startLayout = () => {
       left = minIndex * width;
       colsHeightArr.value[minIndex] = minHeight +props.verticalGap+ height;
     }
-    console.log('left',item.offsetHeight)
     item.style.left = left + "px";
     item.style.top = top + "px";
   }

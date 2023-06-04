@@ -11,7 +11,8 @@
     "build": "rollup -c ./scripts/build.js ",
     "build:watch": "rollup -w -c ./scripts/build.js",
     "test": "vitest",
-    "preview": "vite"
+    "preview": "vite",
+    "build:preview": "vite build"
   },
   "author": "lycarrot",
   "license": "MIT",
