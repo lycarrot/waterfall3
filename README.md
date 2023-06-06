@@ -6,13 +6,19 @@
 ### 效果查看地址
 http://waterfall3.top/
 
-### 引入
+### 安装
+```
+npm i water-fall3 --save-dev 
+或
+yarn install water-fall3 --save-dev
+```
 
+### 引入
 全局注册组件
 
 ```js
 import { createApp } from 'vue';
-import waterFall3 from 'waterFall3';
+import waterFall3 from 'water-fall3';
 
 const app = createApp();
 app.use(waterFall3);
