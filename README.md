@@ -4,7 +4,7 @@
 基于vue3+typesscript+rollup构建的瀑布流列表组件，在pc端能够根据屏幕宽度做自适应变化调整。
 
 ### 效果查看地址
-http://waterfall3.top/
+[http://waterfall3.top/](http://mywaterfall3.top/)
 
 ### 引入
 
