@@ -3,22 +3,80 @@ import  waterFall3  from "../core";
 import axios from "axios";
 import { ref, onMounted } from "vue";
 
+let mockLists=[
+  {
+    "src": "https://img-1301800639.cos.ap-guangzhou.myqcloud.com/waterfall/1.jfif"
+  },
+  {
+    "src": "https://img-1301800639.cos.ap-guangzhou.myqcloud.com/waterfall/2.jfif"
+  },
+  {
+    "src": "https://img-1301800639.cos.ap-guangzhou.myqcloud.com/waterfall/3.jfif"
+  },
+  {
+    "src": "https://img-1301800639.cos.ap-guangzhou.myqcloud.com/waterfall/4.jfif"
+  },
+  {
+    "src": "https://img-1301800639.cos.ap-guangzhou.myqcloud.com/waterfall/5.jfif"
+  },
+  {
+    "src": "https://img-1301800639.cos.ap-guangzhou.myqcloud.com/waterfall/6.jfif"
+  },
+  {
+    "src": "https://img-1301800639.cos.ap-guangzhou.myqcloud.com/waterfall/7.jfif"
+  },
+  {
+    "src": "https://img-1301800639.cos.ap-guangzhou.myqcloud.com/waterfall/8.jfif"
+  },
+  {
+    "src": "https://img-1301800639.cos.ap-guangzhou.myqcloud.com/waterfall/9.jfif"
+  },
+  {
+    "src": "https://img-1301800639.cos.ap-guangzhou.myqcloud.com/waterfall/10.jfif"
+  },
+  {
+    "src": "https://img-1301800639.cos.ap-guangzhou.myqcloud.com/waterfall/11.jfif"
+  },
+  {
+    "src": "https://img-1301800639.cos.ap-guangzhou.myqcloud.com/waterfall/12.jfif"
+  },
+  {
+    "src": "https://img-1301800639.cos.ap-guangzhou.myqcloud.com/waterfall/13.jfif"
+  },
+  {
+    "src": "https://img-1301800639.cos.ap-guangzhou.myqcloud.com/waterfall/14.jfif"
+  },
+  {
+    "src": "https://img-1301800639.cos.ap-guangzhou.myqcloud.com/waterfall/15.jfif"
+  },
+  {
+    "src": "https://img-1301800639.cos.ap-guangzhou.myqcloud.com/waterfall/16.jfif"
+  },
+  {
+    "src": "https://img-1301800639.cos.ap-guangzhou.myqcloud.com/waterfall/17.jfif"
+  },
+  {
+    "src": "https://img-1301800639.cos.ap-guangzhou.myqcloud.com/waterfall/18.jfif"
+  },
+  {
+    "src": "https://img-1301800639.cos.ap-guangzhou.myqcloud.com/waterfall/19.jfif"
+  },
+  {
+    "src": "https://img-1301800639.cos.ap-guangzhou.myqcloud.com/waterfall/20.jfif"
+  }
+]
+
 let lists = ref([]);
 let waterfall = ref<HTMLElement | null>();
 let page =ref<number>(0)
 const getLists = () => {
-  axios
-    .get("../mock/lists.json" )
-    .then((res) => {
-      // 加载到底部数据了
-      if (page.value.length>10) {
+       if (page.value.length>10) {
        waterfall.value.onFinish();
         waterfall;
         return;
       }
-      lists.value = lists.value.concat(res.data);
+      lists.value = lists.value.concat(mockLists);
       page.value++
-    });
 };
 
 getLists();
