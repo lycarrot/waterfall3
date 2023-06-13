@@ -3,7 +3,6 @@ import  waterFall3  from "../core";
 import axios from "axios";
 import { ref, onMounted } from "vue";
 
-
 let mockLists=[
   {
     "src": "https://img-1301800639.cos.ap-guangzhou.myqcloud.com/waterfall/1.jfif"
