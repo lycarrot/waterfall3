@@ -1,6 +1,6 @@
 {
   "name": "water-fall3",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "基于vue3开发的瀑布流组件，解决前台流式布局问题，图片加载采用的是预加载方式。",
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
